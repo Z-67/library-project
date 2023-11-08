@@ -17,6 +17,24 @@ body, html {
     padding: 0;
     background: linear-gradient(to bottom, #c285c2, #e1adad);
 
-    
+}
+
+.plus-button {
+    position:relative;
+    left:4vw;
+    top:8vh;
+    background-color: cornflowerblue;
+    border-color:cornflowerblue;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 4vw;
+    width: 5vw;
+    height: 5vw;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.plus-button:hover {
+    transform: scale(1.5); 
 }
 
