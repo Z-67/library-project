@@ -80,7 +80,7 @@ body, html {
     border: 0.5vw solid #e1adad;
     padding: 1vw; 
     width: 12rem;
-    height: 15rem;
+    height: 17rem;
     border-radius: 1vw;
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin-top: 1vw;
@@ -106,4 +106,9 @@ body, html {
     border: none;
     border-radius: 0.5em;
     
+}
+
+.toggle-read-button {
+    margin-bottom: 1rem;
+    cursor: pointer;
 }

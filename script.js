@@ -47,6 +47,11 @@ function removeBook(index) {
     addBookToLibrary(); // Re-render the books after removing
 }
 
+function toggleReadStatus(index) {
+    myLibrary[index].read = !myLibrary[index].read;
+    addBookToLibrary(); // Re-render the books after updating read status
+}
+
 // Function to display books on the page
 function addBookToLibrary() {
 
@@ -69,6 +74,7 @@ function addBookToLibrary() {
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
             <p>Read: ${book.read ? 'Yes' : 'No'}</p>
+            <button class="toggle-read-button" data-index="${i}">Toggle Read Status</button>
             <button class="remove-button" data-index="${i}">Remove</button>
         `;
         
@@ -76,6 +82,10 @@ function addBookToLibrary() {
 
         // Add card to the container
         container.appendChild(card);
+
+        card.querySelector('.toggle-read-button').addEventListener('click', function() {
+            toggleReadStatus(i); // Pass the index to the toggle ReadStatus function
+        });
 
         // event listener for remove button
         card.querySelector('.remove-button').addEventListener('click', function() {
