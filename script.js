@@ -42,6 +42,11 @@ function Book(event) {
     event.target.reset();
 }
 
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    addBookToLibrary(); // Re-render the books after removing
+}
+
 // Function to display books on the page
 function addBookToLibrary() {
 
@@ -64,15 +69,21 @@ function addBookToLibrary() {
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
             <p>Read: ${book.read ? 'Yes' : 'No'}</p>
+            <button class="remove-button" data-index="${i}">Remove</button>
         `;
         
-        // Apply class based on read status
         card.classList.add(book.read ? "read" : "not-read");
 
         // Add card to the container
         container.appendChild(card);
+
+        // event listener for remove button
+        card.querySelector('.remove-button').addEventListener('click', function() {
+            removeBook(i); // Pass the index to the removeBook function
+        });
     }
 }
+
 
 // event listener for the form submit event
 document.querySelector('form').addEventListener('submit', function(event) {
