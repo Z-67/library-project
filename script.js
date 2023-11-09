@@ -66,6 +66,9 @@ function addBookToLibrary() {
             <p>Read: ${book.read ? 'Yes' : 'No'}</p>
         `;
         
+        // Apply class based on read status
+        card.classList.add(book.read ? "read" : "not-read");
+
         // Add card to the container
         container.appendChild(card);
     }
@@ -79,5 +82,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
      // Call function to display book on the page
     addBookToLibrary();
 });
+
+
 
 
