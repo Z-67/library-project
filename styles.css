@@ -4,7 +4,7 @@ header {
     height: 2rem; 
     width: 100%; 
     text-align: center; 
-    padding: 1.2vw; 
+    padding: 1rem; 
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
 
@@ -42,7 +42,9 @@ body, html {
 }
 
 .modal {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -53,12 +55,31 @@ body, html {
 
 .modal-content {
     background-color: #fff;
-    width: 60%;
-    margin: 0 auto;
+    width: 80%;
+    max-width: 25rem;
+    margin: auto;
     margin-top: 10%;
     padding: 1.5vw;
     border-radius: 1vw;
     position: relative;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label,
+form input,
+form checkbox,
+form button {
+    margin: 0.3rem;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 60%;
 }
 
 .close {
@@ -77,16 +98,15 @@ body, html {
 
 .book-card {
     background-color: white;
-    border: 0.5vw solid #e1adad;
     padding: 1vw; 
-    width: 12rem;
+    width: 15rem;
     height: 17rem;
     border-radius: 1vw;
     font-family:Georgia, 'Times New Roman', Times, serif;
-    margin-top: 1vw;
+    margin-top: 1rem;
     box-sizing: border-box;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    margin-left: 1rem;
+    margin-right: 1rem;
     font-size: 1rem;
 }
 
@@ -98,6 +118,10 @@ body, html {
     border: 0.5vw solid red;
 }
 
+.toggle-read-button {
+    cursor: pointer;
+}
+
 .remove-button {
     background-color: #f44336;
     color: white;
@@ -105,10 +129,9 @@ body, html {
     cursor: pointer;
     border: none;
     border-radius: 0.5em;
-    
 }
 
-.toggle-read-button {
-    margin-bottom: 1rem;
-    cursor: pointer;
+h3{
+    margin-top: 0;
+    margin-bottom: 0;
 }

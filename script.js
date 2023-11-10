@@ -43,13 +43,13 @@ function Book(event) {
 }
 
 function removeBook(index) {
-    myLibrary.splice(index, 1);
-    addBookToLibrary(); // Re-render the books after removing
+    myLibrary.splice(index, 1); // removes book at specified index from array
+    addBookToLibrary(); // Re-render books after removing
 }
 
 function toggleReadStatus(index) {
-    myLibrary[index].read = !myLibrary[index].read;
-    addBookToLibrary(); // Re-render the books after updating read status
+    myLibrary[index].read = !myLibrary[index].read; //toggles read property of book
+    addBookToLibrary(); // Re-render books after updating read status
 }
 
 // Function to display books on the page
@@ -57,9 +57,9 @@ function addBookToLibrary() {
 
     // Get the container element where book cards will be displayed
     let container = document.getElementById("book-cards");
-    container.innerHTML = '';
+    container.innerHTML = ''; //duplicate cards appear without this
     
-    //  loop goes through the book objects in library
+    //  loop goes through the book objects in library rray
     for(let i = 0; i < myLibrary.length; i++) {
         // Access each book object and assign it to the variable book
         let book = myLibrary[i];
@@ -70,12 +70,12 @@ function addBookToLibrary() {
         
         // Add book details to the card
         card.innerHTML = `
-            <h2>${book.title}</h2>
+            <h3>${book.title}</h3>
             <p>Author: ${book.author}</p>
             <p>Pages: ${book.pages}</p>
             <p>Read: ${book.read ? 'Yes' : 'No'}</p>
-            <button class="toggle-read-button" data-index="${i}">Toggle Read Status</button>
-            <button class="remove-button" data-index="${i}">Remove</button>
+            <p><button class="toggle-read-button" data-index="${i}">Toggle Read Status</button></p>
+            <p><button class="remove-button" data-index="${i}">Remove</button><p>
         `;
         
         card.classList.add(book.read ? "read" : "not-read");
@@ -103,7 +103,4 @@ document.querySelector('form').addEventListener('submit', function(event) {
      // Call function to display book on the page
     addBookToLibrary();
 });
-
-
-
 
